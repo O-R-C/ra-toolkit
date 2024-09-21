@@ -7,7 +7,7 @@ export default function Movies() {
 
   return (
     <Section>
-      {error && error}
+      {error && <p className='text-center'>{error}</p>}
       {movies.length > 0 &&
         movies.map((movie) => (
           <Movie

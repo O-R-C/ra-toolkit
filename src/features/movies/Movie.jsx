@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, useNavigation } from 'react-router-dom'
+import Item from '../../ui/Item'
 
 export default function Movie({ Title, Year, Poster, imdbID }) {
+  const navigation = useNavigation()
+
   return (
-    <div className='last:border-0 last:pb-0 border-b pb-6'>
+    <Item>
       <Link
-        to={`/movie/${imdbID}`}
+        to={navigation.state === 'loading' ? '#' : `/movie/${imdbID}`}
         className='flex gap-6'
         replace
       >
@@ -19,7 +22,7 @@ export default function Movie({ Title, Year, Poster, imdbID }) {
           <p>{Year}</p>
         </div>
       </Link>
-    </div>
+    </Item>
   )
 }
 
