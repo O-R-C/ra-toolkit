@@ -1,15 +1,12 @@
 import Movie from './Movie'
 import Section from '../../ui/Section'
 import { useSelector } from 'react-redux'
-import Loader from '../../ui/Loader'
 
 export default function Movies() {
-  const { movies, error, status } = useSelector((state) => state.movies)
-  console.log('🚀 ~ movies:', movies, error)
+  const { movies, error } = useSelector((state) => state.movies)
 
   return (
     <Section>
-      {status === 'loading' && <Loader />}
       {error && error}
       {movies.length > 0 &&
         movies.map((movie) => (

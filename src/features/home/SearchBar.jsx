@@ -1,5 +1,6 @@
 import { debounceSearch } from '../../utility/debounceSearch'
 import { useDispatch } from 'react-redux'
+import StatusBar from './StatusBar'
 
 export default function SearchBar() {
   const dispatch = useDispatch()
@@ -9,7 +10,7 @@ export default function SearchBar() {
   }
 
   return (
-    <form>
+    <form className='flex items-center gap-2'>
       <input
         type='text'
         name='query'
@@ -17,6 +18,7 @@ export default function SearchBar() {
         onChange={handleChange}
         className='w-60 p-2 rounded-xl bg-violet-500 text-white placeholder:text-white focus-visible:outline-black'
       />
+      <StatusBar />
     </form>
   )
 }

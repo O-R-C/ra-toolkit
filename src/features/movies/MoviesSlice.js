@@ -43,7 +43,7 @@ const moviesSlice = createSlice({
 
         if (action.payload.Search) {
           state.movies = action.payload.Search
-          state.totalResults = action.payload.TotalResults
+          state.totalResults = action.payload.totalResults
         }
 
         state.status = 'idle'
