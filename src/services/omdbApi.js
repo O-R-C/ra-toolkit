@@ -7,6 +7,8 @@ export async function getMovies(query) {
   }
 
   const movies = await data.json()
+  console.log('🚀 ~ movies:', movies)
+  if (movies.Error) return movies
 
   const totalResults = Math.ceil(Number(movies.totalResults) / 10)
 

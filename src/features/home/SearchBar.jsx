@@ -1,19 +1,15 @@
-import { useRef } from 'react'
-import { Form } from 'react-router-dom'
-import { debounceSubmit } from '../../utility/debounceSubmit'
+import { debounceSearch } from '../../utility/debounceSearch'
+import { useDispatch } from 'react-redux'
 
 export default function SearchBar() {
-  const formRef = useRef()
+  const dispatch = useDispatch()
 
-  const handleChange = () => {
-    debounceSubmit(formRef.current)
+  const handleChange = (e) => {
+    debounceSearch(e.target.value, dispatch)
   }
 
   return (
-    <Form
-      method='post'
-      ref={formRef}
-    >
+    <form>
       <input
         type='text'
         name='query'
@@ -21,6 +17,6 @@ export default function SearchBar() {
         onChange={handleChange}
         className='w-60 p-2 rounded-xl bg-violet-500 text-white placeholder:text-white focus-visible:outline-black'
       />
-    </Form>
+    </form>
   )
 }
