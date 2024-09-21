@@ -10,7 +10,7 @@ export default function SearchBar() {
   }
 
   return (
-    <form className='flex items-center gap-2'>
+    <div className='flex items-center gap-2'>
       <input
         type='text'
         name='query'
@@ -19,6 +19,6 @@ export default function SearchBar() {
         className='w-60 p-2 rounded-xl bg-violet-500 text-white placeholder:text-white focus-visible:outline-black'
       />
       <StatusBar />
-    </form>
+    </div>
   )
 }

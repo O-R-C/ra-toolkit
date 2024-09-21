@@ -6,7 +6,7 @@ export default function FavoriteItem({ Title, imdbRating, Poster, Runtime, imdbI
   return (
     <Item>
       <Link
-        className='flex gap-6 text-center items-center'
+        className='flex gap-6 text-center items-center px-3'
         to={`/movie/${imdbID}`}
         replace
       >

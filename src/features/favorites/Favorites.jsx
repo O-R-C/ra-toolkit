@@ -6,11 +6,10 @@ import FavoriteItem from './FavoriteItem'
 export default function Favorites() {
   const count = useSelector((state) => state.favorites.count)
   const movies = useSelector((state) => state.favorites.movies)
-  console.log('🚀 ~ movies:', movies)
 
   return (
     <Section>
-      <Summary count={count} />
+      <Summary count={count} />{' '}
       {movies.length > 0 ? (
         movies.map((movie) => (
           <FavoriteItem
